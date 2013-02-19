@@ -19,7 +19,8 @@
 			],
 			'cflags': [
 				'-std=c99',
-				'-fPIC'
+				'-fPIC',
+				'-w'
 			]
 		},
 
@@ -38,7 +39,13 @@
 			'cflags': [
 				'-std=c99',
 				'-fPIC'
-			]
+			],
+			'direct_dependent_settings': {
+				'include_dirs': [
+					'proc/',
+					'.'
+				],
+			}
 		},
 
 		{
