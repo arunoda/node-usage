@@ -1,0 +1,11 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libprocps
+Description: Library to control and query process state
+Version: 3.3.3
+Libs: -L${libdir} -lprocps
+Libs.private:
+Cflags: -I${includedir}
