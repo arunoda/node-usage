@@ -24,7 +24,7 @@
 		},
 
 		{
-			'target_name': 'usage',
+			'target_name': 'libusage',
 			'type': 'shared_library',
 			'dependencies': [
 				'proc'
@@ -45,7 +45,7 @@
 			'target_name': 'test',
 			'type': 'executable',
 			'dependencies': [
-				'usage'
+				'libusage'
 			],
 			'include_dirs': [
 				'.',

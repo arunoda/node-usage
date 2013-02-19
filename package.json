@@ -1,0 +1,30 @@
+{
+    "name": "usage",
+    "version": "0.1.1",
+    "description": "simple way to lookup linux process usage",
+    "keywords": [
+        "usage",
+        "ps",
+        "cpu",
+        "ram",
+        "memory"
+    ],
+    "author": "Arunoda Susiripala <arunoda.susiripala@gmail.com>",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/arunoda/node-usage.git"
+    },
+    "main": "./lib/usage.js",
+    "engines": {
+        "node": ">= 0.8.x"
+    },
+    "scripts": {
+        
+    },
+    "dependencies": {
+
+    },
+    "devDependencies": {
+
+    }
+}
