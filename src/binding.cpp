@@ -73,20 +73,8 @@ Handle<Value> node_process_usage(const Arguments& args) {
 
 void RegisterModule(Handle<Object> target) {
 
-	target->Set(String::NewSymbol("process_usage"),
+	target->Set(String::NewSymbol("lookup"),
 		FunctionTemplate::New(node_process_usage)->GetFunction());
 }
 
 NODE_MODULE(node_usage, RegisterModule);
-
-
-/*
-const unsigned argc = 3;
-		Local<Value> argv[argc] = { 
-			Local<Value>::New(Null()), 
-			Local<Value>::New(Number::New(cpu)),
-			Local<Value>::New(Number::New(mem)) 
-		};
-
-		callback->Call(Context::GetCurrent()->Global(), argc, argv);
-*/

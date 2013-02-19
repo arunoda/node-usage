@@ -20,7 +20,8 @@
 			],
 			'cflags': [
 				'-std=c99',
-				'-fPIC'
+				'-fPIC',
+				'-w'
 			]
 		},
 

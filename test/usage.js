@@ -1,5 +1,25 @@
-var usage = require('../');
-usage.lookup(22248, function() {
+var usage 	= require('../');
+var assert 	= require('assert');
 
-	console.log(arguments);
+suite('Usage', function() {
+
+	test('invalid pid', function(done) {
+		
+		usage.lookup(1232323, function(err) {
+
+			assert.ok(err);
+			done();
+		});
+	});
+
+	test('valid pid', function(done) {
+
+		usage.lookup(process.pid, function(err, result) {
+
+			assert.equal(err, null);
+			assert.ok(result.cpu >= 0);
+			assert.ok(result.memory > 0);
+			done();
+		});
+	});
 });
