@@ -272,7 +272,6 @@ static void init_libproc(void){
   if(linux_version_code > LINUX_VERSION(2, 4, 0)){ 
     Hertz = find_elf_note(AT_CLKTCK);
     if(Hertz!=NOTE_NOT_FOUND) return;
-    fputs("2.4+ kernel w/o ELF notes? -- report this\n", stderr);
   }
 #endif /* __linux __ */
 #if defined(__FreeBSD_kernel__) || defined(__FreeBSD__)

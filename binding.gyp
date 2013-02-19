@@ -1,15 +1,16 @@
 {
 	'targets': [
 		{
-			'type': 'shared_library',
-			'product_extension': 'node',
-			'defines': [ 'BUILDING_NODE_EXTENSION' ],
-			'target_name': 'usage',
+			'target_name': 'node_usage',
+			'include_dirs': [
+				'deps/libusage/proc/',
+				'deps/libusage/'
+			],
 			'sources': [
-				'src/binding.cc'
+				'src/binding.cpp'
 			],
 			'dependencies': [
-				'deps/libusage/libusage.gyp:libusage'
+				'deps/libusage/libusage.gyp:usage'
 			]
 		}
 	]

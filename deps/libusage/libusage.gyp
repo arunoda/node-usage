@@ -1,10 +1,11 @@
 {
+
 	'targets': [
 		{
 		    'target_name': 'proc',
-			'type': 'shared_library',
+			'type': 'static_library',
 			'defines': [
-
+				'clocksource=acpi_pm'
 			],
 			'include_dirs': [
 				'proc/'
@@ -19,14 +20,13 @@
 			],
 			'cflags': [
 				'-std=c99',
-				'-fPIC',
-				'-w'
+				'-fPIC'
 			]
 		},
 
 		{
-			'target_name': 'libusage',
-			'type': 'shared_library',
+			'target_name': 'usage',
+			'type': 'static_library',
 			'dependencies': [
 				'proc'
 			],
@@ -37,22 +37,15 @@
 				'usage.c'
 			],
 			'cflags': [
-				'-std=c99',
-				'-fPIC'
-			],
-			'direct_dependent_settings': {
-				'include_dirs': [
-					'proc/',
-					'.'
-				],
-			}
+		
+			]
 		},
 
 		{
 			'target_name': 'test',
 			'type': 'executable',
 			'dependencies': [
-				'libusage'
+				'usage'
 			],
 			'include_dirs': [
 				'.',

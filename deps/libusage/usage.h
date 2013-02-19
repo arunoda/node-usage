@@ -1,3 +1,6 @@
+#ifndef USAGE_H
+#define USAGE_H
+
 #include <stdlib.h>
 #include <unistd.h>
 #include "sysinfo.h"
@@ -5,13 +8,23 @@
 
 typedef proc_t usage_t;
 
+EXTERN_C_BEGIN
+
+extern int abc();
+
 extern usage_t* usage_init(int);
 /*
 	CPU Usage as a percentage
 */
 extern float usage_cpu(usage_t*);
+
 /*
 	Total memory usage in killobytes
 */
+
 extern unsigned long usage_totalmem(usage_t*);
 extern void usage_clean(usage_t*);
+
+EXTERN_C_END
+
+#endif

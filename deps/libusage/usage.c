@@ -3,7 +3,12 @@
 usage_t* usage_init(int pid) {
   
   proc_t * proc_info = malloc(sizeof(proc_t));
-  return get_proc_stats(pid, proc_info);
+  if(get_proc_stats(pid, proc_info)) {
+    return proc_info;
+  } else {
+    free(proc_info);
+    return NULL;
+  }
 }
 
 void usage_clean(usage_t* usage_info) {
@@ -28,4 +33,9 @@ unsigned long usage_totalmem(usage_t* pp) {
 
   long page_size = sysconf(_SC_PAGESIZE);
   return pp->rss * page_size;
+}
+
+
+int abc() {
+  return 2000;
 }
