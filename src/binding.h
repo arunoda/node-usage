@@ -1,5 +1,7 @@
 #include <node.h>
+#ifndef USAGE_NOT_SUPPORTED
 #include <usage.h>
+#endif
 
 using namespace v8;
 
