@@ -27,13 +27,13 @@ suite('Usage', function() {
 
 function _usageCallback(done, calback) {
 
-	return function(err) {
+	return function(err, result) {
 
 		if(err && err.code == 'PLATFORM_NOT_SUPPORTED') {
 			console.log(err.code);
 			done();
 		} else {
-			calback(done);
+			calback(err, result);
 		}
 	};
 }

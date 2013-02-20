@@ -3,7 +3,7 @@
 		{
 			'target_name': 'node_usage',
 			'conditions': [
-				['OS=="linux"', {
+				['OS=="linux" and target_arch=="x64"', {
 					'include_dirs': [
 						'deps/libusage/proc/',
 						'deps/libusage/'
