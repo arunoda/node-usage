@@ -1,9 +1,10 @@
+[![Build Status](https://travis-ci.org/arunoda/node-usage.png?branch=master)](https://travis-ci.org/arunoda/node-usage)
 # node-usage 
 
 ### linux process usage lookup with nodejs
 
 * With `node-usage` we can lookup cpu and memory usage of any accessible process on the system.
-* This is 98% JavaScript and logic is based on [procps](http://procps.sourceforge.net/)
+* Written in 98% JavaScript and logic is based on [procps](http://procps.sourceforge.net/)
 
 ## Example
 
@@ -27,6 +28,6 @@ usage.lookup(pid, function(err, result) {
 
 ## Motivation
 
-* Some NodeJS PAAS providers do not expose us an interface to monitor CPU and Memory usage of our apps.
+* Some of the NodeJS PAAS providers do not expose an interface to monitor CPU and Memory usage.
 * They asks us to go for somewhere else for that which I don't want to go (or simply I cannot go)
 * So `node-usage` was born to tackle on this.
