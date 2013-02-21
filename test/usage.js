@@ -29,9 +29,8 @@ function _usageCallback(done, calback) {
 
 	return function(err, result) {
 
-		if(err && err.code == 'PLATFORM_NOT_SUPPORTED') {
-			console.log(err.code);
-			done();
+		if(err && err.message == 'NOT_SUPPORTED_ON_THIS_PLATFORM') {
+			throw new Error('NOT_SUPPORTED_ON_THIS_PLATFORM');
 		} else {
 			calback(err, result);
 		}
