@@ -1,19 +1,18 @@
 {
 	'targets': [
 		{
-			'target_name': 'node_usage',
+			'target_name': 'sysinfo',
 			'conditions': [
-				['OS=="linux" and target_arch=="x64"', {
+				['OS=="linux"', {
 					'include_dirs': [
-						'deps/libusage/proc/',
-						'deps/libusage/'
+						'deps/procps/proc/',
 					],
 					'dependencies': [
-						'deps/libusage/libusage.gyp:usage'
+						'deps/procps/binding.gyp:sysinfo'
 					]
 				}, {
 					'defines': [
-						'USAGE_NOT_SUPPORTED'
+						'PROC_NOT_SUPPORTED'
 					]
 				}]
 			],

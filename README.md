@@ -3,7 +3,7 @@
 ### linux process usage lookup with nodejs
 
 * With `node-usage` we can lookup cpu and memory usage of any accessible process on the system.
-* This is based on a cut down version of [procps](http://procps.sourceforge.net/) which compiles fast.
+* This is 98% JavaScript and logic is based on [procps](http://procps.sourceforge.net/)
 
 ## Example
 
