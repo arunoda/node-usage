@@ -1,13 +1,10 @@
-var usage = require('./');
+var usage = require('../');
+usage.setKeepHistory(true);
 
-checkUsage();
-setInterval(checkUsage, 1000);
+setInterval(function() {
 
-function checkUsage() {
+	usage.lookup(parseInt(process.argv[2]), function(err, stat) {
 
-	usage.lookup(process.pid, prt);
-}
-
-function prt () {
-	console.log(arguments);
-}
+		console.log(err, stat);
+	});
+}, 2000);

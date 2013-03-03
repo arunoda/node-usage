@@ -26,6 +26,24 @@ usage.lookup(pid, function(err, result) {
 }
 ~~~
 
+## Average CPU usage vs Current CPU usage
+
+By default CPU Percentage provided is a average from the starting time of the process. It does not correctly reflect the current CPU usage. (this is also a problem with linux `ps` utility)
+
+But If you call `usage.lookup()` continuously for a given pid, you can turn on **keepHistory** flag and you'll get the CPU usage since last time you track the usage. This reflects the current CPU usage. 
+
+see following example to enable keepHistory flag
+
+~~~js
+usage.setKeepHistory(true);
+~~~
+
+you can clear history cached too
+~~~js
+usage.clearHistory(pid); //clear history for the given pid
+usage.clearHistory(); //clean history for all pids
+~~~
+
 ## Motivation
 
 * Some of the NodeJS PAAS providers do not expose an interface to monitor CPU and Memory usage.
