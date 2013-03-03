@@ -28,7 +28,7 @@ usage.lookup(pid, function(err, result) {
 
 ## Average CPU usage vs Current CPU usage
 
-By default CPU Percentage provided is a average from the starting time of the process. It does not correctly reflect the current CPU usage. (this is also a problem with linux `ps` utility)
+By default CPU Percentage provided is an average from the starting time of the process. It does not correctly reflect the current CPU usage. (this is also a problem with linux `ps` utility)
 
 But If you call `usage.lookup()` continuously for a given pid, you can turn on **keepHistory** flag and you'll get the CPU usage since last time you track the usage. This reflects the current CPU usage. 
 
