@@ -2,5 +2,4 @@
 
 #ifndef PROC_NOT_SUPPORTED
 #include <unistd.h>
-#include <sysinfo.h>
 #endif
