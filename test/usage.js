@@ -22,6 +22,18 @@ suite('Usage', function() {
 			done();
 		}));
 	});
+
+	test('valid pid - with keepHistory', function(done) {
+
+		var options = { keepHistory: true };
+		usage.lookup(process.pid, options, _usageCallback(done, function(err, result) {
+
+			assert.equal(err, null);
+			assert.ok(result.cpu >= 0);
+			assert.ok(result.memory > 0);
+			done();
+		}));
+	});
 });
 
 

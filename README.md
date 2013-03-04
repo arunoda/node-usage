@@ -35,10 +35,14 @@ But If you call `usage.lookup()` continuously for a given pid, you can turn on *
 see following example to enable keepHistory flag
 
 ~~~js
-usage.setKeepHistory(true);
+var pid = process.pid;
+var options = { keepHistory: true }
+usage.lookup(pid, options, function(err, result) {
+	
+});
 ~~~
 
-you can clear history cached too
+you can clear history cache too
 ~~~js
 usage.clearHistory(pid); //clear history for the given pid
 usage.clearHistory(); //clean history for all pids
