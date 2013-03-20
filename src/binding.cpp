@@ -4,13 +4,11 @@ using namespace v8;
 
 void RegisterModule(Handle<Object> target) {
 
-#ifdef PROC_NOT_SUPPORTED
-	target->Set(String::NewSymbol("IS_SUPPORTED"), Boolean::New(false));
-#else 
-	target->Set(String::NewSymbol("IS_SUPPORTED"), Boolean::New(true));
-	target->Set(String::NewSymbol("HERTZ"), Number::New(sysconf(_SC_CLK_TCK)));
-	target->Set(String::NewSymbol("PAGE_SIZE"), Number::New(sysconf(_SC_PAGESIZE)));
+#ifdef is_linux
+    target->Set(String::NewSymbol("HERTZ"), Number::New(sysconf(_SC_CLK_TCK)));
+    target->Set(String::NewSymbol("PAGE_SIZE"), Number::New(sysconf(_SC_PAGESIZE)));
 #endif
+    target->Set(String::NewSymbol("OS"), String::New(OS));
 }
 
 NODE_MODULE(sysinfo, RegisterModule);

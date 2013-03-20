@@ -1,5 +1,5 @@
 #include <node.h>
 
-#ifndef PROC_NOT_SUPPORTED
+#ifdef is_linux
 #include <unistd.h>
 #endif
