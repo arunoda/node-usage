@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/arunoda/node-usage.png?branch=master)](https://travis-ci.org/arunoda/node-usage)
-# node-usage 
+# node-usage [![Build Status](https://travis-ci.org/arunoda/node-usage.png?branch=master)](https://travis-ci.org/arunoda/node-usage)
 
 ### linux process usage lookup with nodejs
 
