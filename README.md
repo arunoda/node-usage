@@ -1,9 +1,11 @@
 # node-usage [![Build Status](https://travis-ci.org/arunoda/node-usage.png?branch=master)](https://travis-ci.org/arunoda/node-usage)
 
-### linux process usage lookup with nodejs
+### process usage lookup with nodejs
 
 * Simple interface to lookup cpu and memory usage of any accessible process on the system.
-* Written in 98% JavaScript and logic is based on [procps](http://procps.sourceforge.net/)
+* Written in 98% JavaScript and logic is based on [procfs](http://en.wikipedia.org/wiki/Procfs)
+
+> Currently linux is the only supported platform, But I would love to see some Pull Requests :)
 
 ## Example
 
