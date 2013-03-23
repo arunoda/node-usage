@@ -3,9 +3,8 @@
 ### process usage lookup with nodejs
 
 * Simple interface to lookup cpu and memory usage of any accessible process on the system.
-* Written in 98% JavaScript and logic is based on [procfs](http://en.wikipedia.org/wiki/Procfs)
-
-> Currently linux is the only supported platform, But I would love to see some Pull Requests :)
+* Works on Linux, SmartOS and Solaris
+* Tested on Heroku and Nodejitsu
 
 ## Example
 
@@ -28,6 +27,7 @@ usage.lookup(pid, function(err, result) {
 ~~~
 
 ## Average CPU usage vs Current CPU usage
+>This is only apply for Linux
 
 By default CPU Percentage provided is an average from the starting time of the process. It does not correctly reflect the current CPU usage. (this is also a problem with linux `ps` utility)
 
