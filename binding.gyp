@@ -2,6 +2,13 @@
 	'targets': [
 		{
 			'target_name': 'sysinfo',
+			'conditions': [
+				['OS=="solaris"', {
+					'sources': [
+						'src/solaris.cpp'
+					]
+				}]
+			],
 			'sources': [
 				'src/binding.cpp',
 			],

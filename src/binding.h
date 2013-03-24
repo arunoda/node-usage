@@ -5,5 +5,5 @@
 #endif
 
 #ifdef is_solaris
-#include "solaris_ps.c"
+#include "solaris.h"
 #endif

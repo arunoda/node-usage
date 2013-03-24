@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "solaris_ps.h"
+#include "solaris.h"
 
 static int read_buffer(char *buffer, int buffer_size, char* file_path) {
 
