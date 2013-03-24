@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include "solaris.h"
 
+/*
+    Getting CPU Usage from the /proc
+*/
 static int read_buffer(char *buffer, int buffer_size, char* file_path) {
 
     FILE *fp = fopen(file_path, "r");
@@ -59,6 +62,10 @@ int get_usage(int pid, ps_usage_t* ps_usage) {
         return 0;
     }
 }
+
+/*
+    V8 Integration 
+*/
 
 void AsyncGetUsage(uv_work_t* req) {
 
