@@ -27,7 +27,7 @@ usage.lookup(pid, function(err, result) {
 ~~~
 
 ## Average CPU usage vs Current CPU usage
->This is only apply for Linux
+>This is only applicable for Linux
 
 By default CPU Percentage provided is an average from the starting time of the process. It does not correctly reflect the current CPU usage. (this is also a problem with linux `ps` utility)
 
