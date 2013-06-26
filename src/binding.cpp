@@ -11,7 +11,12 @@ void RegisterModule(Handle<Object> target) {
 
 #ifdef is_solaris
     target->Set(String::NewSymbol("getUsage"), 
-    	FunctionTemplate::New(GetUsage)->GetFunction());
+        FunctionTemplate::New(GetUsage)->GetFunction());
+#endif
+
+#ifdef is_mac
+    target->Set(String::NewSymbol("getUsage"), 
+        FunctionTemplate::New(GetUsage)->GetFunction());
 #endif
 
     target->Set(String::NewSymbol("OS"), String::New(OS));
