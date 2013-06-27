@@ -7,6 +7,11 @@
 					'sources': [
 						'src/solaris.cpp'
 					]
+				}],
+				['OS=="mac"', {
+					'sources': [
+						'src/mac.cpp'
+					]
 				}]
 			],
 			'sources': [
