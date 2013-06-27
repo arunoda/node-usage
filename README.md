@@ -3,7 +3,7 @@
 ### process usage lookup with nodejs
 
 * Simple interface to lookup cpu and memory usage of any accessible process on the system.
-* Works on Linux, SmartOS and Solaris
+* Works on OSX, Linux, SmartOS and Solaris
 * Tested on Heroku and Nodejitsu
 
 ## Example
@@ -48,6 +48,9 @@ you can clear history cache too
 usage.clearHistory(pid); //clear history for the given pid
 usage.clearHistory(); //clean history for all pids
 ~~~
+
+## Notes on OSX
+if you are going to monitor usage of a foriegn pid, please do it as `sudo`. See [here](https://github.com/arunoda/node-usage/pull/5) for more details.
 
 ## Motivation
 
