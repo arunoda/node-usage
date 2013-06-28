@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/types.h>
 #include <sys/sysctl.h>
 #include <mach/task.h>
 

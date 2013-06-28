@@ -1,10 +1,7 @@
 #ifndef MAC_H
 #define MAC_H
 
-#include <stdlib.h>
-#include <string.h>
 #include <node.h>
-#include <uv.h>
 
 typedef struct ps_usage {
     double cpu;
