@@ -49,9 +49,6 @@ usage.clearHistory(pid); //clear history for the given pid
 usage.clearHistory(); //clean history for all pids
 ~~~
 
-## Notes on OSX
-if you are going to monitor usage of a foriegn pid, please do it as `sudo`. See [here](https://github.com/arunoda/node-usage/pull/5) for more details.
-
 ## Motivation
 
 * Some of the NodeJS PAAS providers do not expose an interface to monitor CPU and Memory usage.
