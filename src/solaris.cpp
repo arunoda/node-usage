@@ -119,7 +119,7 @@ Handle<Value> GetUsage(const Arguments& args) {
     uv_work_t* req = new uv_work_t();
     req->data = usageData;
 
-    uv_queue_work(uv_default_loop(), req, AsyncGetUsage, AsyncAfterGetUsage);
+    uv_queue_work(uv_default_loop(), req, AsyncGetUsage, (uv_after_work_cb)AsyncAfterGetUsage);
     
     return scope.Close(Undefined());
 }
