@@ -18,16 +18,16 @@ suite('Usage', function() {
     });
   });
 
-  test('valid pid - with keepHistory', function(done) {
-    var options = { keepHistory: true };
-    usage.lookup(process.pid, options, function(err, result) {
-      assert.ifError(err);
-      assert.ok(result.cpu >= 0);
-      assert.ok(result.memory > 0);
-      if(usage.sysinfo.OS == 'linux') {
+  if(process.platform == 'linux') {
+    test('valid pid - with keepHistory', function(done) {
+      var options = { keepHistory: true };
+      usage.lookup(process.pid, options, function(err, result) {
+        assert.ifError(err);
+        assert.ok(result.cpu >= 0);
+        assert.ok(result.memory > 0);
         usage.clearHistory();
-      }
-      done();
+        done();
+      });
     });
-  });
+  }
 });
