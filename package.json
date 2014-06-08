@@ -16,7 +16,7 @@
   },
   "main": "./lib/usage.js",
   "scripts": {
-    "test": "test/index.js"
+    "test": "./node_modules/.bin/mocha"
   },
   "engines": {
     "node": ">= 0.8.x"
@@ -25,6 +25,6 @@
     "bindings": "1.x.x"
   },
   "devDependencies": {
-    "mocha": "1.8.x"
+    "mocha": "1.x.x"
   }
 }
