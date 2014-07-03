@@ -16,8 +16,7 @@
   },
   "main": "./lib/usage.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha",
-    "install": "./build.sh"
+    "test": "./node_modules/.bin/mocha"
   },
   "engines": {
     "node": ">= 0.8.x"
