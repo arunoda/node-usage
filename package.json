@@ -16,15 +16,13 @@
   },
   "main": "./lib/usage.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha",
-    "install": "./build.sh"
+    "test": "./node_modules/.bin/mocha"
   },
   "engines": {
     "node": ">= 0.8.x"
   },
   "dependencies": {
-    "bindings": "1.x.x",
-    "node-gyp": "0.13.x"
+    "bindings": "1.x.x"
   },
   "devDependencies": {
     "mocha": "1.x.x"
