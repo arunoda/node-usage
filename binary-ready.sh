@@ -1,3 +1,4 @@
 #!/bin/bash
 
-rm binding.gyp
+git rm binding.gyp
+git commit -m "bindings removed"
