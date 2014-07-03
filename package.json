@@ -22,8 +22,7 @@
     "node": ">= 0.8.x"
   },
   "dependencies": {
-    "bindings": "1.x.x",
-    "node-gyp": "0.13.x"
+    "bindings": "1.x.x"
   },
   "devDependencies": {
     "mocha": "1.x.x"
