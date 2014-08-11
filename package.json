@@ -22,7 +22,8 @@
     "node": ">= 0.8.x"
   },
   "dependencies": {
-    "bindings": "1.x.x"
+    "bindings": "1.x.x",
+    "nan": "*"
   },
   "devDependencies": {
     "mocha": "1.x.x"
