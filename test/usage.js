@@ -14,6 +14,8 @@ suite('Usage', function() {
       assert.ifError(err);
       assert.ok(result.cpu >= 0);
       assert.ok(result.memory > 0);
+      assert.ok(result.rss > 0);
+      assert.ok(result.vsize > 0);
       done();
     });
   });
@@ -25,6 +27,8 @@ suite('Usage', function() {
         assert.ifError(err);
         assert.ok(result.cpu >= 0);
         assert.ok(result.memory > 0);
+        assert.ok(result.rss > 0);
+        assert.ok(result.vsize > 0);
         usage.clearHistory();
         done();
       });
