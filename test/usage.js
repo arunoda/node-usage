@@ -13,6 +13,8 @@ suite('Usage', function() {
     usage.lookup(process.pid, function(err, result) {
       assert.ifError(err);
       assert.ok(result.cpu >= 0);
+      assert.ok(result.cpu_user >= 0);
+      assert.ok(result.cpu_system >= 0);
       assert.ok(result.memory > 0);
       assert.ok(result.rss > 0);
       assert.ok(result.vsize > 0);
@@ -26,6 +28,8 @@ suite('Usage', function() {
       usage.lookup(process.pid, options, function(err, result) {
         assert.ifError(err);
         assert.ok(result.cpu >= 0);
+        assert.ok(result.cpu_user >= 0);
+        assert.ok(result.cpu_system >= 0);
         assert.ok(result.memory > 0);
         assert.ok(result.rss > 0);
         assert.ok(result.vsize > 0);
