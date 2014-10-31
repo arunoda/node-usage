@@ -23,6 +23,8 @@ usage.lookup(pid, function(err, result) {
 {
 	cpu: 10.6, //in percentage
 	memory: 100065280 //in no of bytes
+  rss: 100065280 //in no of bytes
+  vsize: 100065280 //in no of bytes
 }
 ~~~
 
