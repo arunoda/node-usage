@@ -52,6 +52,7 @@ suite('Usage', function() {
         usage.clearHistory();
         
         usage.lookup(process.pid, options, checkCpuTime);
+        done();
       }
     });
   }
