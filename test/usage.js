@@ -12,8 +12,10 @@ suite('Usage', function() {
   test('valid pid', function(done) {
     usage.lookup(process.pid, function(err, result) {
       assert.ifError(err);
-      assert.ok(result.cpu >= 0);
+      assert.ok(result.cpu >= 0);      
       assert.ok(result.memory > 0);
+      assert.ok(result.memoryInfo.rss >= 0);
+      assert.ok(result.memoryInfo.vsize >= 0);
       done();
     });
   });
@@ -24,10 +26,39 @@ suite('Usage', function() {
       usage.lookup(process.pid, options, function(err, result) {
         assert.ifError(err);
         assert.ok(result.cpu >= 0);
+        assert.ok(result.cpuInfo.pcpu >= 0);
+        assert.ok(result.cpuInfo.pcpuUser >= 0);
+        assert.ok(result.cpuInfo.pcpuSystem >= 0);
+        
         assert.ok(result.memory > 0);
-        usage.clearHistory();
-        done();
+        assert.ok(result.memoryInfo.rss > 0);
+        assert.ok(result.memoryInfo.vsize > 0);
+        
+        for(var lc=0; lc<999999; lc++) {
+          Math.random();
+        }
+
+        setTimeout(function() {
+          usage.lookup(process.pid, options, checkCpuTime);
+        }, 200);
       });
+
+      function checkCpuTime (err, result) {
+        assert.ifError(err);
+        assert.ok(result.cpu >= 0);
+        assert.ok(result.cpuInfo.pcpu >= 0);
+        assert.ok(result.cpuInfo.cpuTime >= 0);
+        assert.ok(result.cpuInfo.pcpuUser >= 0);
+        assert.ok(result.cpuInfo.pcpuSystem >= 0);
+        
+        assert.ok(result.memory > 0);
+        assert.ok(result.memoryInfo.rss > 0);
+        assert.ok(result.memoryInfo.vsize > 0);
+        usage.clearHistory();
+        
+        usage.lookup(process.pid, options, checkCpuTime);
+        done();
+      }
     });
   }
 });
