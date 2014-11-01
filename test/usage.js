@@ -12,12 +12,10 @@ suite('Usage', function() {
   test('valid pid', function(done) {
     usage.lookup(process.pid, function(err, result) {
       assert.ifError(err);
-      assert.ok(result.cpu >= 0);
-      assert.ok(result.cpu_user >= 0);
-      assert.ok(result.cpu_system >= 0);
+      assert.ok(result.cpu >= 0);      
       assert.ok(result.memory > 0);
-      assert.ok(result.rss > 0);
-      assert.ok(result.vsize > 0);
+      assert.ok(result.memoryInfo.rss >= 0);
+      assert.ok(result.memoryInfo.vsize >= 0);
       done();
     });
   });
@@ -28,14 +26,33 @@ suite('Usage', function() {
       usage.lookup(process.pid, options, function(err, result) {
         assert.ifError(err);
         assert.ok(result.cpu >= 0);
-        assert.ok(result.cpu_user >= 0);
-        assert.ok(result.cpu_system >= 0);
+        assert.ok(result.cpuInfo.pcpu >= 0);
+        assert.ok(result.cpuInfo.pcpuUser >= 0);
+        assert.ok(result.cpuInfo.pcpuSystem >= 0);
+        
         assert.ok(result.memory > 0);
-        assert.ok(result.rss > 0);
-        assert.ok(result.vsize > 0);
+        assert.ok(result.memoryInfo.rss > 0);
+        assert.ok(result.memoryInfo.vsize > 0);
         usage.clearHistory();
-        done();
+        
+        usage.lookup(process.pid, options, checkCpuTime);
       });
+
+      function checkCpuTime (err, result) {
+        assert.ifError(err);
+        assert.ok(result.cpu >= 0);
+        assert.ok(result.cpuInfo.pcpu >= 0);
+        assert.ok(result.cpuInfo.cpuTime >= 0);
+        assert.ok(result.cpuInfo.pcpuUser >= 0);
+        assert.ok(result.cpuInfo.pcpuSystem >= 0);
+        
+        assert.ok(result.memory > 0);
+        assert.ok(result.memoryInfo.rss > 0);
+        assert.ok(result.memoryInfo.vsize > 0);
+        usage.clearHistory();
+        
+        usage.lookup(process.pid, options, checkCpuTime);
+      }
     });
   }
 });
