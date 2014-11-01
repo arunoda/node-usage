@@ -33,7 +33,6 @@ suite('Usage', function() {
         assert.ok(result.memory > 0);
         assert.ok(result.memoryInfo.rss > 0);
         assert.ok(result.memoryInfo.vsize > 0);
-        usage.clearHistory();
         
         usage.lookup(process.pid, options, checkCpuTime);
       });
