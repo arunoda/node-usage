@@ -34,6 +34,9 @@ suite('Usage', function() {
         assert.ok(result.memoryInfo.rss > 0);
         assert.ok(result.memoryInfo.vsize > 0);
         
+        for(var lc=0; lc<9999; lc++) {
+          Math.random();
+        }
         usage.lookup(process.pid, options, checkCpuTime);
       });
 
