@@ -1,6 +1,6 @@
 {
   "name": "usage",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "simple way to lookup linux process usage",
   "keywords": [
     "usage",
