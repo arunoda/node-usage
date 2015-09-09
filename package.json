@@ -19,11 +19,11 @@
     "test": "./node_modules/.bin/mocha"
   },
   "engines": {
-    "node": ">= 0.8.x"
+    "node": ">= 0.10.x"
   },
   "dependencies": {
     "bindings": "1.x.x",
-    "nan": "^1.8.0"
+    "nan": "^2.0.9"
   },
   "devDependencies": {
     "mocha": "1.x.x"

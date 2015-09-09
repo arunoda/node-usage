@@ -2,18 +2,18 @@
 #include "nan.h"
 using namespace v8;
 
-void RegisterModule(Handle<Object> target) {
+void RegisterModule(Local<Object> exports) {
 
 #ifdef is_linux
-  target->Set(NanNew<String>("HERTZ"), NanNew<Number>(sysconf(_SC_CLK_TCK)));
-  target->Set(NanNew<String>("PAGE_SIZE"), NanNew<Number>(sysconf(_SC_PAGESIZE)));
+  exports->Set(Nan::New<String>("HERTZ").ToLocalChecked(), Nan::New<Number>(sysconf(_SC_CLK_TCK)));
+  exports->Set(Nan::New<String>("PAGE_SIZE").ToLocalChecked(), Nan::New<Number>(sysconf(_SC_PAGESIZE)));
 #endif
 
 #ifdef is_solaris
-  target->Set(NanNew<String>("getUsage"),
+  exports->Set(Nan::New<String>("getUsage").ToLocalChecked(),
     FunctionTemplate::New(GetUsage)->GetFunction());
 #endif
-  target->Set(NanNew<String>("OS"), NanNew<String>(OS));
+  exports->Set(Nan::New<String>("OS").ToLocalChecked(), Nan::New<String>(OS).ToLocalChecked());
 }
 
 NODE_MODULE(sysinfo, RegisterModule);
