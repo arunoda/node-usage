@@ -19,7 +19,7 @@
     "test": "./node_modules/.bin/mocha"
   },
   "engines": {
-    "node": ">= 0.8.x"
+    "node": ">= 0.10.x"
   },
   "dependencies": {
     "bindings": "1.x.x",
