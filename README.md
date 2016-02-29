@@ -1,3 +1,9 @@
+> **Depricate Notice:**
+>
+> This project works. But there's a much better project with a similar API.<br/>
+> It even does not need a binary addon (So, it's easy to use). <br/>
+> See pidusage: https://github.com/soyuka/pidusage
+
 # node-usage [![Build Status](https://travis-ci.org/arunoda/node-usage.png?branch=master)](https://travis-ci.org/arunoda/node-usage)
 
 ### process usage lookup with nodejs
